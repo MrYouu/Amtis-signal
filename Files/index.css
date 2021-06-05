@@ -19,15 +19,17 @@ body
     margin-top: 0;
     margin-bottom: 0;
 
-    background-color: #f8f8f8;
-    overflow-x: hidden;
+    background-color: #f3f4f9;
+    overflow: hidden;
     scroll-behavior: smooth;
 }
 
 .Colors
 {
     color: #111111;
-    color: #f8f8f8;
+    color: #f3f4f9;
+    color: #3d405b;
+    color: #c6091b;
 }
 
 /*#region Settings */
@@ -45,40 +47,953 @@ body
 
 ::-webkit-scrollbar-track
 {
-    background-color: #f8f8f8;
+    background-color: #f3f4f9;
     border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background: #eeeeee; 
+	background: #c6091b; 
 	border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb:hover
 {
-	background: #dddddd; 
+	background: #b5080a; 
 }
 
 /** Text selection */
-::-moz-selection
-{
-    background: #3f4f7c;
-}
-  
+::-moz-selection,
 ::selection
 {
-    background: #3f4f7c;
+    background: #3d405b;
 }
 /*#endregion Settings */
 
-/*#region ... */
+/*#region Additivs */
 
-/*#endregion ... */
+/*#region Spacer */
+.Spacer {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.Spacer.s10 { height: 10; }
+.Spacer.s20 { height: 20; }
+.Spacer.s30 { height: 30; }
+.Spacer.s40 { height: 40; }
+.Spacer.s50 { height: 50; }
+.Spacer.s60 { height: 60; }
+.Spacer.s70 { height: 70; }
+.Spacer.s80 { height: 80; }
+.Spacer.s90 { height: 90; }
+.Spacer.s100 { height: 100; }
+.Spacer.s110 { height: 110; }
+.Spacer.s120 { height: 120; }
+.Spacer.s130 { height: 130; }
+.Spacer.s140 { height: 140; }
+.Spacer.s150 { height: 150; }
+.Spacer.s160 { height: 160; }
+.Spacer.s170 { height: 170; }
+.Spacer.s180 { height: 180; }
+.Spacer.s190 { height: 190; }
+.Spacer.s200 { height: 200; }
+
+.Spacer.s800 { height: 800; }
+/*#endregion Spacer */
+
+/*#endregion Additivs */
+
+/*#region Top bar */
+.topBar
+{
+    position: relative;
+    width: calc(100% - 90px);
+    height: 60px;
+    top: 0;
+    left: 45;
+    margin-top: 20px;
+
+    animation: fadeIn .3s ease-out forwards .1s;
+    opacity: 0;
+}
+
+.topBar .topBarLogo
+{
+    float: left;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    left: 0;
+    font-size: 32px;
+    font-weight: bolder;
+    transform: translateY(-50%);
+}
+
+.topBar .topBarLogo text
+{
+    color: #c6091b;
+}
+
+.topBar .topBarText
+{
+    float: right;
+    display: inline;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    right: 0;
+    color: #3d405b;
+    font-size: 18px;
+    font-weight: bold;
+    transform: translateY(-50%);
+    margin-left: 15px;
+    padding: 4px 8px;
+}
+
+.topBar .topBarText::before
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #c6091b;
+    visibility: hidden;
+    transform: scaleX(0);
+}
+
+.topBar .topBarText:hover::before
+{
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.topBar .topBarText.Active
+{
+    color: #c6091b;
+}
+
+.topBar .topBarText.withBackground
+{
+    font-weight: normal;
+    color: #f3f4f9;
+    background-color: #3d405b;
+    border-radius: 999px;
+    padding: 8px 20px;
+}
+
+.topBar .topBarText.withBackground:hover
+{
+    background-color: #2c304a;
+}
+
+.topBar .topBarText.withBackground:hover::before,
+.topBar .topBarNavButton.withBackground:hover::before
+{
+    visibility: hidden;
+}
+
+.topBar .topBarNavButton
+{
+    float: right;
+    display: none;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    right: 0;
+    color: #3d405b;
+    font-size: 18px;
+    font-weight: bold;
+    transform: translateY(-50%);
+    margin-left: 15px;
+    padding: 4px 8px;
+}
+
+.topBar .topBarNavButton:hover
+{
+    filter: brightness(1.2);
+}
+/*#endregion Top bar */
+
+/*#region Main title box */
+.mainTitleBox
+{
+    position: relative;
+    width: 540px;
+    height: auto;
+    top: 0;
+    left: 210;
+    margin-top: 130px;
+}
+
+.mainTitleBox .mainTitleBoxTittle
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: bolder;
+    color: #3d405b;
+    margin-bottom: 45px;
+
+    animation: fadeIn .3s ease-out forwards .2s;
+    opacity: 0;
+}
+
+.mainTitleBox .mainTitleBoxTittle text
+{
+    color: #c6091b;
+}
+
+.mainTitleBox .mainTitleBoxText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    color: #3d405bb0;
+
+    animation: fadeIn .3s ease-out forwards .4s;
+    opacity: 0;
+}
+/*#endregion Main title box */
+
+/*#region Side slider */
+.sideSlider
+{
+    position: relative;
+    width: 100%;
+    height: calc(260px + 30px);
+    top: 0;
+    left: 0;
+    margin-top: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.sideSlider::-webkit-scrollbar
+{
+    height: 0;
+}
+
+.sideSlider .sideSliderElement
+{
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    height: 260px;
+    top: 0;
+    left: 0;
+    background-color: #c0c2d6;
+    margin-right: 15px;
+    border-radius: 20px 20px 20px 0px;
+    overflow: hidden;
+    white-space: normal;
+    box-shadow: #3d405ba0 0px 10px 20px;
+
+    animation: fadeIn .3s ease-out forwards .5s;
+    opacity: 0;
+}
+
+.sideSlider .sideSliderElement:nth-child(2) { animation-delay: .6s; }
+.sideSlider .sideSliderElement:nth-child(3) { animation-delay: .7s; }
+.sideSlider .sideSliderElement:nth-child(4) { animation-delay: .8s; }
+
+.sideSlider .sideSliderElement:first-child
+{
+    margin-left: 210px;
+}
+
+.sideSlider .sideSliderElement:last-child
+{
+    margin-right: 210px;
+}
+
+.sideSlider .sideSliderElement img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sideSlider .sideSliderElement .sideSliderElementText
+{
+    position: absolute;
+    width: calc(50% - 15px);
+    height: auto;
+    bottom: 15;
+    left: 15;
+    font-weight: bold;
+    line-height: 28px;
+    color: #f3f4f9;
+}
+/*#endregion Side slider */
+
+/*#region Page section */
+.pageSection
+{
+    position: relative;
+    width: calc(100% - 210px * 2);
+    height: auto;
+    top: 0;
+    left: 210;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-top: 120px;
+}
+
+.pageSection.Filled
+{
+    background-color: #ffffff;
+}
+
+.pageSection .pageSectionTittle
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    color: #3d405b;
+    margin-bottom: 20px;
+}
+
+.pageSection .pageSectionText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    line-height: 32px;
+    color: #3d405ba0;
+    margin-bottom: 30px;
+}
+
+.pageSection .pageSectionText#whyChooseUs
+{
+    font-size: 28px;
+    color: #3d405b;
+    padding-top: 90px;
+}
+
+.pageSection .pageSectionText.Small,
+.pageSection .pageSectiosButtonList.Small
+{
+    width: 40%;
+}
+
+.pageSection .pageSectionText.Medium,
+.pageSection .pageSectiosButtonList.Medium
+{
+    width: 50%;
+}
+
+.pageSection .pageSectionText.Smaller,
+.pageSection .pageSectiosButtonList.Smaller
+{
+    width: calc(40% - 80px);
+    left: 80px;
+}
+
+.pageSection .pageSectiosButtonList
+{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px;
+}
+
+#pageSectiosButtonListOnSmallScreen
+{
+    display: none;
+}
+
+.pageSectionTextButton
+{
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #3d405b;
+    margin-right: 20px;
+    transform: translateY(50%);
+}
+
+.pageSectionTextButton::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: -8;
+    left: 0;
+    background-color: #c6091b;
+}
+
+.pageSectionTextButton:hover::after
+{
+    width: calc(100% + 8px);
+    left: -4;
+}
+
+.pageSection .pageSectiosButtonList .pageSectionShapeButton
+{
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 50%;
+    left: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #3d405b;
+    background-color: #3d405b00;
+    border: solid 1px #3d405b20;
+    border-radius: 999px;
+    margin-right: 20px;
+    padding: 10px 30px;
+    transform: translateY(-50%);
+}
+
+.pageSection .pageSectiosButtonList .pageSectionShapeButton:hover
+{
+    border: solid 1px #3d405b60;
+}
+
+.sideBoxToOneOnLine
+{
+    position: absolute;
+    width: calc(60% - 30px);
+    height: 100%;
+    top: 0;
+    left: calc(40% + 30px);
+}
+
+.sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs
+{
+    top: 90;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox
+{
+    display: grid;
+    position: absolute;
+    width: calc(50% - 15px);
+    height: auto;
+    top: 0;
+    left: 0;
+    grid-template-columns: 100%;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox:first-child
+{
+    left: 0;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox:last-child
+{
+    left: calc(50% + 30px);
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sectionIcon
+{
+    position: relative;
+    width: 50px;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement:hover .sectionIcon
+{
+    transform: translateY(-10px);
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    color: #3d405b;
+    margin-bottom: 15px;
+}
+
+.sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs  .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle
+{
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle text
+{
+    font-weight: bolder;
+    color: #c6091b;
+    margin-right: 5px;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    color: #3d405b;
+    margin-bottom: 15px;
+}
+
+.sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs  .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText
+{
+    font-size: 14px;
+    color: #3d405b60;
+}
+
+.sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText.smallerText
+{
+    font-size: 14px;
+}
+
+.commentBox
+{
+    position: relative;
+    width: fit-content;
+    height: 30px;
+    top: 0;
+    left: 0;
+    margin-bottom: 15px;
+}
+
+.commentBox img
+{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+
+.commentBox .commentBoxName
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3d405b;
+    margin-top: 2px;
+    margin-left: 45px;
+}
+
+.commentBox .commentBoxText
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #3d405bb0;
+    margin-left: 45px;
+}
+
+.pageSectionNews
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px;
+}
+
+.pageSectionNews img
+{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.pageSectionNews .pageSectionNewsTittle
+{
+    position: relative;
+    width: calc(100% - 300px - 30px - 15px);
+    height: auto;
+    top: 0;
+    left: calc(300px + 30px);
+    color: #3d405b;
+    margin-bottom: 10px;
+}
+
+.pageSectionNews .pageSectionNewsFrom
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: calc(300px + 30px);
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #3d405bb0;
+    margin-bottom: 20px;
+}
+
+.pageSectionNews .pageSectionNewsText
+{
+    position: relative;
+    width: calc(100% - 300px - 30px - 15px);
+    height: auto;
+    top: 0;
+    left: calc(300px + 30px);
+    color: #3d405bb0;
+    margin-bottom: 10px;
+}
+
+.pageSectionNews .readMoreButton
+{
+    left: calc(300px + 30px);
+}
+/*#endregion Page section */
+
+/*#region Bottom bar */
+.pageSectionBottomBar
+{
+    position: relative;
+    width: 400px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pageSectionBottomBar:hover
+{
+    transform: translateX(-50%) scale(1.1);
+}
+
+.bottomBarMainLogo
+{
+    position: absolute;
+    width: 100%;
+    top: 180;
+    left: 0;
+    text-align: center;
+    color: #3d405b;
+}
+
+.bottomBarMainLogo text
+{
+    color: #c6091b;
+}
+
+.bottomBarSideList
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottomBarSideList .bottomBarSideListElement
+{
+    display: inline;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    color: #3d405b80;
+    margin-right: 30px;
+}
+
+.bottomBarSideList .bottomBarSideListElement:last-child
+{
+    margin-right: 0px;
+}
+
+.bottomBarSideList.whitDots .bottomBarSideListElement::before
+{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    left: -18;
+    background-color: #3d405b80;
+    border-radius: 999px;
+    transform: translateY(-50%);
+}
+
+.bottomBarSideList.whitDots .bottomBarSideListElement:first-child:before
+{
+    display: none;
+}
+
+.bottomBarSideBox
+{
+    position: absolute;
+    width: 300px;
+    height: auto;
+}
+
+.bottomBarSideBox.onLeft
+{
+    display: grid;
+    top: 140;
+    left: 0;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bottomBarSideBox.onLeft .bottomBarSideBoxElement
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    color: #3d405b;
+}
+
+.bottomBarSideBox.onRight
+{
+    top: 100;
+    right: 0;
+}
+
+.bottomBarSideBoxText
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    color: #3d405b;
+    margin-bottom: 20px;
+}
+
+.bottomBarSideBoxInput
+{
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-weight: normal;
+    color: #3d405b;
+    background-color: #ffffff;
+    border: solid 1px #3d405b20;
+    border-radius: 5px;
+    outline: 0;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    transition: ease .5s;
+}
+
+.bottomBarSideBoxInput::placeholder
+{
+    font-weight: bolder;
+    color: #3d405b;
+}
+
+/* .bottomBarSideBoxInput + label
+{
+    color: #3d405b;
+    font-family: Arial;
+    font-size: .8em;
+    position: relative;
+    left: -166px;
+}
+
+.bottomBarSideBoxInput:after
+{
+    content: '*';
+    color: #c6091b;
+}
+
+.bottomBarSideBoxInput:invalid + label
+{
+    display: inline-block;
+}
+
+.bottomBarSideBoxInput:valid + label
+{
+    display: none;
+} */
+/*#endregion Bottom bar */
+
+/*#region Decoration */
+.readMoreButton
+{
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    color: #c6091b;
+}
+
+.mainPageImageBackgroundDecoration
+{
+    position: absolute;
+    width: 850px;
+    top: 110;
+    right: 0;
+    z-index: -1;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
+}
+
+.lineDotsDecoration
+{
+    position: relative;
+    width: 40px;
+    height: 8px;
+    top: 0;
+    left: 0;
+    background-color: #c6091b;
+    border-radius: 999px;
+    margin-bottom: 30px;
+
+    animation: fadeIn .3s ease-out forwards .3s;
+    opacity: 0;
+}
+
+.lineDotsDecoration.leftSpace
+{
+    left: 80px;
+}
+
+.lineDotsDecoration div,
+.lineDotsDecoration div::before,
+.lineDotsDecoration div::after
+{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 0;
+    left: calc(100% + 5px);
+    background-color: #c6091b;
+    border-radius: 999px;
+}
+
+.lineDotsDecoration div::before,
+.lineDotsDecoration div::after
+{
+    content: "";
+}
+
+.lineDotsDecoration div::after
+{
+    left: calc(100% + 5px + 8px + 5px);
+}
+
+#decorationAboveHouse
+{
+    position: absolute;
+    width: 400px;
+    top: 50;
+    right: 30;
+    z-index: -1;
+
+    animation: fadeIn .3s ease-out forwards .5s;
+    opacity: 0;
+}
+
+#mainTitleBoxDecoration02
+{
+    display: none;
+}
+
+#decorationLeffFromList
+{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 500;
+    left: 100;
+    border: solid 6px #3d405b20;
+    border-radius: 999px;
+
+    animation: fadeIn .3s ease-out forwards .7s;
+    opacity: 0;
+}
+
+#decorationLeffFromList::before
+{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    border: solid 6px #3d405b20;
+    border-radius: 999px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#decorationLeffFromList::after
+{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    border: solid 6px #3d405b20;
+    border-radius: 999px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#decorationLeffFromList:hover
+{
+    transform: scale(1.1);
+}
+/*#endregion Decoration */
 
 img
 {
-    color: #111111;
+    color: #3d405b;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -90,6 +1005,7 @@ img
 
 a
 {
+    color: #3d405b;
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -184,6 +1100,353 @@ p, div, h1, h2, h3, h4, h5, h6, i, img, table, tr, th, input, text
 @media screen and (max-width: 1000px)
 {
 
+    /*#region Top bar */
+    .topBar
+    {
+        margin-top: 10px;
+    }
+
+    .topBar .topBarText
+    {
+        display: none;
+    }
+
+    .topBar .topBarText#topBarLogInButton,
+    .topBar .topBarNavButton
+    {
+        display: inline;
+    }
+    /*#endregion Top bar */
+
+    /*#region Main title box */
+    .mainTitleBox
+    {
+        width: calc(100% - 90px);
+        left: 45;
+        margin-top: 100px;
+    }
+
+    .mainTitleBox .mainTitleBoxTittle
+    {
+        margin-bottom: 30px;
+    }
+
+    .mainTitleBox .mainTitleBoxText
+    {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    /*#endregion Main title box */
+
+    /*#region Side slider */
+    .sideSlider
+    {
+        height: calc(240px + 30px);
+        /* margin-top: 120px; */
+    }
+
+    .sideSlider .sideSliderElement
+    {
+        width: 300px;
+        height: 240px;
+    }
+
+    .sideSlider .sideSliderElement:first-child
+    {
+        margin-left: 45px;
+    }
+
+    .sideSlider .sideSliderElement:last-child
+    {
+        margin-right: 45px;
+    }
+    /*#endregion Side slider */
+
+    /*#region Page section */
+    .pageSection
+    {
+        width: calc(100% - 45px * 2);
+        left: 45;
+        margin-top: 80px;
+    }
+
+    .pageSection .pageSectionText.Small,
+    .pageSection .pageSectiosButtonList.Small
+    {
+        width: 100%;
+    }
+
+    .sideBoxToOneOnLine
+    {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox
+    {
+        position: relative;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 60px;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox:first-child
+    {
+        left: 0;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox:last-child
+    {
+        left: 0;
+    }
+
+    .pageSection .pageSectiosButtonList,
+    .pageSection .pageSectiosButtonList.Small
+    {
+        width: fit-content;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .pageSection .pageSectionText.Medium,
+    .pageSection .pageSectiosButtonList.Medium
+    {
+        width: calc(50% - 30px);
+    }
+
+    #contactUsButton {
+        display: none;
+    }
+
+    .pageSection .pageSectiosButtonList .pageSectionShapeButton
+    {
+        padding: 10px 60px;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement
+    {
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement
+    {
+        width: 100%;
+        left: 0;
+        transform: translateX(0%);
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sectionIcon
+    {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle
+    {
+        text-align: center;
+    }
+
+    .sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs  .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle
+    {
+        text-align: left;
+    }
+
+/* .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementTittle text
+{
+    font-weight: bolder;
+    color: #c6091b;
+    margin-right: 5px;
+} */
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText
+    {
+        text-align: center;
+    }
+
+    .sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs  .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText,
+    #pageSectionWithComments .sideBoxToOneOnLine  .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText
+    {
+        text-align: left;
+    }
+
+/* .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText.smallerText
+{
+    font-size: 14px;
+} */
+
+    #pageSectiosButtonListOnSmallScreen
+    {
+        display: block;
+    }
+
+    .pageSection .pageSectionText.Smaller,
+    .pageSection .pageSectiosButtonList.Smaller
+    {
+        width: calc(100% - 90px);
+        left: 45;
+    }
+
+    .pageSection .pageSectionText#whyChooseUs
+    {
+        padding-top: 30px;
+    }
+
+    #whyChooseUsSpacer
+    {
+        display: none;
+    }
+
+    .sideBoxToOneOnLine.sideBoxToOneOnLineWhyUs
+    {
+        top: 0;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLine
+    {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox
+    {
+        position: relative;
+        width: 100%;
+        grid-template-columns: 100%;
+        margin-bottom: 60px;
+    }
+
+    .pageSectionNewsHolder
+    {
+        display: grid;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .pageSectionNews img
+    {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+        margin-bottom: 30px
+    }
+
+    .pageSectionNews .pageSectionNewsTittle
+    {
+        width: 100%;
+        left: 0;
+        font-size: 24px;
+    }
+
+    .pageSectionNews .pageSectionNewsFrom
+    {
+        left: 0;
+    }
+
+    .pageSectionNews .pageSectionNewsText
+    {
+        width: 100%;
+        left: 0;
+        margin-bottom: 30px;
+    }
+
+    .pageSectionNews .readMoreButton
+    {
+        left: 0;
+    }
+    /*#endregion Page section */
+
+    /*#region Bottom bar */
+    .pageSectionBottomBar
+    {
+        position: absolute;
+    }
+
+    .bottomBarMainLogo
+    {
+        position: relative;
+        width: 100%;
+        top: 0;
+        padding: 180px 0px 100px;
+    }
+
+    .bottomBarSideBox
+    {
+        position: relative;
+        width: 400px;
+    }
+
+    .pageSectionTextButton
+    {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bottomBarSideBox.onLeft
+    {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 60px;
+    }
+
+    .bottomBarSideBox.onRight
+    {
+        top: 0;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 60px;
+    }
+
+    .bottomBarSideBoxText
+    {
+        text-align: center;
+    }
+
+    .bottomBarSideBoxElement
+    {
+        text-align: center;
+    }
+    /*#endregion Bottom bar */
+
+    /*#region Decoration */
+    .lineDotsDecoration.leftSpace
+    {
+        left: 45px;
+    }
+
+    .mainPageImageBackgroundDecoration
+    {
+        width: 600px;
+        top: 200;
+    }
+
+    #decorationAboveHouse,
+    #mainTitleBoxDecoration01
+    {
+        display: none;
+    }
+
+    #mainTitleBoxDecoration02
+    {
+        display: block;
+    }
+    /*#endregion Decoration */
+
 }
 /*#endregion Media 1300-1000 */
 
@@ -205,8 +1468,16 @@ p, div, h1, h2, h3, h4, h5, h6, i, img, table, tr, th, input, text
 
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 680px)
 {
+
+    /*#region Decoration */
+    .mainPageImageBackgroundDecoration
+    {
+        width: 500px;
+        top: 340;
+    }
+    /*#endregion Decoration */
 
 }
 /*#endregion Media 700-600 */
@@ -214,6 +1485,177 @@ p, div, h1, h2, h3, h4, h5, h6, i, img, table, tr, th, input, text
 /*#region Media 500-400 */
 @media screen and (max-width: 500px)
 {
+
+    /*#region Top bar */
+    .topBar
+    {
+        width: calc(100% - 30px);
+        left: 15;
+    }
+
+    .topBar .topBarLogo
+    {
+        font-size: 24px;
+    }
+
+    .topBar .topBarText
+    {
+        font-size: 16px;
+    }
+    /*#endregion Top bar */
+
+    /*#region Main title box */
+    .mainTitleBox
+    {
+        width: calc(100% - 30px);
+        left: 15;
+    }
+
+    .mainTitleBox .mainTitleBoxTittle
+    {
+        font-size: 26px;
+    }
+
+    .mainTitleBox .mainTitleBoxText
+    {
+        width: 100%;
+    }
+    /*#endregion Main title box */
+
+    /*#region Side slider */
+    .sideSlider
+    {
+        height: calc(200px + 30px);
+    }
+
+    .sideSlider .sideSliderElement
+    {
+        height: 200px;
+    }
+
+    .sideSlider .sideSliderElement:first-child
+    {
+        margin-left: 15px;
+    }
+
+    .sideSlider .sideSliderElement:last-child
+    {
+        margin-right: 15px;
+    }
+    /*#endregion Side slider */
+
+    /*#region Page section */
+    .pageSection
+    {
+        width: calc(100% - 30px);
+        left: 15;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox
+    {
+        grid-template-columns: 1fr;
+        margin-bottom: 0px;
+    }
+
+    .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement .sideBoxToOneOnLineGridBoxElementText
+    {
+        margin-bottom: 60px;
+    }
+
+    #pageSectionWithCommentsSpacer
+    {
+        display: none;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLine
+    {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+        margin-top: 30px;
+    }
+
+    .pageSection .pageSectionText.Medium,
+    .pageSection .pageSectiosButtonList.Medium
+    {
+        width: 100%;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLineGridBox
+    {
+        display: block;
+        width: 100%;
+        margin-bottom: 60px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLineGridBox::-webkit-scrollbar
+    {
+        height: 0;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLine .sideBoxToOneOnLineGridBox .sideBoxToOneOnLineGridBoxElement
+    {
+        display: inline-block;
+        width: 300px;
+        left: 0;
+        white-space: normal;
+    }
+
+    #pageSectionWithComments .sideBoxToOneOnLineGridBoxElementText
+    {
+        margin-bottom: 0px;
+    }
+
+    .pageSectionNewsHolder
+    {
+        grid-template-columns: 1fr;
+        gap: 0px;
+    }
+    /*#endregion Page section */
+
+    /*#region Decoration */
+    .mainPageImageBackgroundDecoration
+    {
+        width: 400px;
+        top: 340;
+        right: -100;
+    }
+    /*#endregion Decoration */
+
+    /*#region Bottom bar */
+    .bottomBarSideBox
+    {
+        width: 100%;
+    }
+
+    .bottomBarSideBox.onLeft
+    {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 60px;
+    }
+
+    .bottomBarSideBox.onRight
+    {
+        top: 0;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 60px;
+    }
+
+    .bottomBarSideList
+    {
+        font-size: 14px;
+        text-align: center;
+    }
+    /*#endregion Bottom bar */
 
 }
 
