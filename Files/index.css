@@ -1,0 +1,231 @@
+/*The CSS code is property to Mr. You (Kristiyan Valchev) and can only be viewed*/
+/*If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com*/
+
+/*
+    todo - 
+*/
+
+html
+{
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.Colors
+{
+    color: #111111;
+    color: #f8f8f8;
+}
+
+/*#region Settings */
+/** Phone click selection */
+*
+{
+    -webkit-tap-highlight-color: transparent;
+}
+
+/** Scrow bar */
+::-webkit-scrollbar
+{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: #f8f8f8;
+    border-radius: 70px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: #eeeeee; 
+	border-radius: 70px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+	background: #dddddd; 
+}
+
+/** Text selection */
+::-moz-selection
+{
+    background: #3f4f7c;
+}
+  
+::selection
+{
+    background: #3f4f7c;
+}
+/*#endregion Settings */
+
+/*#region ... */
+
+/*#endregion ... */
+
+img
+{
+    color: #111111;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+a
+{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    transition: ease .3s;
+}
+
+p, div, h1, h2, h3, h4, h5, h6, i, img, table, tr, th, input, text
+{
+    padding: 0;
+    margin: 0;
+    transition: ease .3s;
+}
+
+::before, ::after
+{
+    transition: ease .3s;
+}
+
+/*#region Animations */
+@keyframes popUp
+{
+    0%
+    {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes dropDown
+{
+    0%
+    {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn
+{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut
+{
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes defaultAnimation
+{
+    0%
+    {
+
+    }
+
+    100%
+    {
+
+    }
+}
+/*#endregion Animations */
+
+/*#region Media 1300-1000 */
+@media screen and (max-width: 1300px)
+{
+
+}
+
+@media screen and (max-width: 1200px)
+{
+
+}
+
+@media screen and (max-width: 1100px)
+{
+
+}
+
+@media screen and (max-width: 1000px)
+{
+
+}
+/*#endregion Media 1300-1000 */
+
+/*#region Media 900-800 */
+@media screen and (max-width: 900px)
+{
+
+}
+
+@media screen and (max-width: 800px)
+{
+
+}
+/*#endregion Media 900-800 */
+
+/*#region Media 700-600 */
+@media screen and (max-width: 700px)
+{
+
+}
+
+@media screen and (max-width: 600px)
+{
+
+}
+/*#endregion Media 700-600 */
+
+/*#region Media 500-400 */
+@media screen and (max-width: 500px)
+{
+
+}
+
+@media screen and (max-width: 400px)
+{
+
+}
+/*#endregion Media 500-400 */
+
+/*#region Media 350 */
+@media screen and (max-width: 350px)
+{
+
+}
+/*#endregion Media 350 */
