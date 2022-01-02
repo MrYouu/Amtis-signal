@@ -1,1 +1,1 @@
-# Competition
+# Amtis-signal
